@@ -6,7 +6,7 @@ This project configures a **Cytron Maker ESP32** running **ESPHome** integrated 
 
 | Maker ESP32 Board | AHT10 Sensor |
 | :---: | :---: |
-| ![Maker ESP32](images/maker esp32.jpg) | ![AHT10 Sensor](images/aht10.jpg) |
+| ![Maker ESP32](images/makeresp32.jpg) | ![AHT10 Sensor](images/aht10.jpg) |
 
 ---
 
