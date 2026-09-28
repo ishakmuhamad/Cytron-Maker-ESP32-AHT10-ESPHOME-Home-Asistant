@@ -4,6 +4,21 @@ This project configures a **Cytron Maker ESP32** running **ESPHome** integrated 
 
 ![HA](images/HA.jpg)
 
+## 📋 Prerequisites
+
+Before setting up this project, ensure you have the following ready:
+
+### 1. Hardware Requirements
+* **Cytron Maker ESP32** development board[cite: 1, 10]
+* **AHT10 Temperature & Humidity Sensor** module[cite: 1, 9]
+* **USB-C Data Cable** (for power and initial firmware flashing)[cite: 10]
+* **Jumper Wires / Grove to Female Jumper Cable** (if connecting via Maker Port/I2C)[cite: 8, 10]
+
+### 2. Software & Account Requirements
+* **Home Assistant** running on your local network (OS, Supervised, or Container)[cite: 5, 6]
+* **ESPHome Add-on / Dashboard** installed in Home Assistant (or ESPHome installed locally via CLI)[cite: 3, 5]
+
+
 ## 🖼️ Hardware Gallery
 
 | Maker ESP32 Board | AHT10 Sensor |
