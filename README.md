@@ -29,7 +29,9 @@ Before setting up this project, ensure you have the following ready:
 
 ## 🛠️ Hardware Components
 
-- **Development Board:** Cytron Maker ESP32 (ESP32-WROOM-32E)[cite: 10]
+* **Development Board:** [Cytron Maker ESP32 (ESP32-WROOM-32E)](https://my.cytron.io/p-maker-esp32)[cite: 1, 10]
+
+  ![Cytron Maker ESP32](images/cytronweb.jpg)
 - **Buzzer:** Onboard Passive Piezo Buzzer connected to **GPIO26**[cite: 10]
 - **Sensor:** AHT10 Temperature & Humidity Sensor connected via **Maker Port / I2C (SCL: GPIO22, SDA: GPIO21)**[cite: 1, 10]
 
