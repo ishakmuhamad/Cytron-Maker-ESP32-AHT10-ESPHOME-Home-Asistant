@@ -1,4 +1,4 @@
-# Cytron Maker ESP32 – Fire Alarm & Environment Sensor (ESPHome)
+# Cytron Maker ESP32 – Buzzer Alarm & Environment Sensor (ESPHome)
 
 This project configures a **Cytron Maker ESP32** running **ESPHome** integrated with Home Assistant[cite: 1, 7, 10]. It includes an **AHT10 Temperature & Humidity sensor** connected over I2C and a **fire alarm siren trigger** using the onboard piezo buzzer[cite: 1, 10].
 
