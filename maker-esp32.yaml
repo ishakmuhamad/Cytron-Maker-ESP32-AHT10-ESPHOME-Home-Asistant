@@ -1,0 +1,84 @@
+# Board: Generic ESP32 Board (Cytron Maker ESP32)
+# Framework: ESP-IDF
+
+esphome:
+  name: maker-esp32
+  friendly_name: Maker ESP32
+
+esp32:
+  variant: esp32
+  framework:
+    type: esp-idf
+
+logger:
+
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  - platform: esphome
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: Maker ESP32 Fallback Hotspot
+    password: !secret wifi_password
+
+captive_portal:
+
+i2c:
+  - id: i2c_1
+    scl: 22
+    sda: 21
+
+sensor:
+  - platform: aht10
+    id: sensor_aht10_1
+    humidity:
+      name: "Humidity"
+      id: sensor_aht10_1_humidity
+      icon: "mdi:water-percent"
+    temperature:
+      name: "Temperature"
+      id: sensor_aht10_1_temperature
+      icon: "mdi:thermometer"
+    update_interval: 60s
+
+output:
+  - platform: ledc
+    id: buzzer_output
+    pin: GPIO26
+
+button:
+  - platform: template
+    name: "Fire Alarm"
+    icon: "mdi:fire-alert"
+    on_press:
+      then:
+        - output.turn_on: buzzer_output
+        # Alternates between high and low tones for 5 seconds (5 cycles x 1s)
+        - repeat:
+            count: 5
+            then:
+              # High Tone (1000 Hz)
+              - output.ledc.set_frequency:
+                  id: buzzer_output
+                  frequency: "1000Hz"
+              - output.set_level:
+                  id: buzzer_output
+                  level: "50%"
+              - delay: 500ms
+
+              # Low Tone (800 Hz)
+              - output.ledc.set_frequency:
+                  id: buzzer_output
+                  frequency: "800Hz"
+              - output.set_level:
+                  id: buzzer_output
+                  level: "50%"
+              - delay: 500ms
+
+        # Silence output when pattern finishes
+        - output.turn_off: buzzer_output
